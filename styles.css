@@ -245,6 +245,14 @@ section {
   overflow: hidden;
   position: relative;
 }
+.portrait-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .portrait-placeholder svg {
   width: 120px;
   height: 120px;
@@ -352,6 +360,30 @@ section {
 }
 .timeline-body h3 { margin-bottom: 0.6rem; }
 .timeline-body p { font-size: 0.95rem; line-height: 1.75; }
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.timeline-bullets li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  padding-left: 1.1rem;
+  position: relative;
+}
+.timeline-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
 /* ─── Projects ─────────────────────────────────────── */
 #projects {}

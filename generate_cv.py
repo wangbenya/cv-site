@@ -1,7 +1,7 @@
 """
-Generate CV PDF for Dr Benya Wang — Principal Machine Learning Engineer.
+Generate CV PDF for Dr Benya Wang — Machine Learning Engineer.
 Usage: pip install reportlab && python generate_cv.py
-Output: cv.pdf in the same directory.
+Output: Benya_Wang_CV.pdf in the same directory.
 """
 
 from reportlab.lib.pagesizes import A4
@@ -34,20 +34,20 @@ def build_styles():
             fontName='Helvetica-Bold', fontSize=24,
             textColor=NAVY, spaceAfter=2, leading=28),
         'contact': S('contact',
-            fontName='Helvetica', fontSize=9,
+            fontName='Helvetica', fontSize=10,
             textColor=SUBTLE, spaceAfter=4, leading=13, alignment=TA_LEFT),
         'contact_right': S('contact_right',
-            fontName='Helvetica', fontSize=9,
+            fontName='Helvetica', fontSize=10,
             textColor=SUBTLE, spaceAfter=4, leading=13, alignment=TA_RIGHT),
         'section_head': S('section_head',
-            fontName='Helvetica-Bold', fontSize=9,
+            fontName='Helvetica-Bold', fontSize=10,
             textColor=ACCENT, spaceBefore=10, spaceAfter=3,
             leading=12, letterSpacing=1.2),
         'job_title': S('job_title',
             fontName='Helvetica-Bold', fontSize=10.5,
             textColor=NAVY, spaceAfter=1, leading=14),
         'company': S('company',
-            fontName='Helvetica', fontSize=9.5,
+            fontName='Helvetica', fontSize=10,
             textColor=SUBTLE, spaceAfter=2, leading=13),
         'body': S('body',
             fontName='Helvetica', fontSize=10,
@@ -57,13 +57,13 @@ def build_styles():
             textColor=BODY, spaceAfter=2, leading=14,
             leftIndent=11, firstLineIndent=-11),
         'skill_cat': S('skill_cat',
-            fontName='Helvetica-Bold', fontSize=9,
+            fontName='Helvetica-Bold', fontSize=10,
             textColor=NAVY, spaceAfter=1, leading=12),
         'skill_val': S('skill_val',
-            fontName='Helvetica', fontSize=9.5,
+            fontName='Helvetica', fontSize=10,
             textColor=BODY, spaceAfter=3, leading=13),
         'pub': S('pub',
-            fontName='Helvetica', fontSize=9,
+            fontName='Helvetica', fontSize=10,
             textColor=BODY, spaceAfter=3, leading=13,
             leftIndent=11, firstLineIndent=-11),
     }
@@ -97,7 +97,7 @@ def job_row(title, company_period, styles, col_widths):
     return t
 
 
-def build_pdf(path='cv.pdf'):
+def build_pdf(path='Benya_Wang_CV.pdf'):
     doc = SimpleDocTemplate(
         path,
         pagesize=A4,
@@ -114,7 +114,7 @@ def build_pdf(path='cv.pdf'):
     # ── Header ────────────────────────────────────────────────────────────
     story.append(Paragraph('Dr Benya Wang', styles['name']))
     story.append(Paragraph(
-        'email: benya.wang@hotmail.com  ·  personal website: <a href="https://wangbenya.github.io/cv-site" color="#2E6DA4">wangbenya.github.io/cv-site</a>  ·  Perth, WA',
+        'Email: benya.wang@hotmail.com  ·  Personal website: <a href="https://wangbenya.github.io/cv-site" color="#2E6DA4">wangbenya.github.io/cv-site</a>  ·  Perth, WA',
         styles['contact']
     ))
     story.append(Spacer(1, 0.2 * cm))
@@ -125,9 +125,9 @@ def build_pdf(path='cv.pdf'):
     story.append(Paragraph(
         'Machine Learning Engineer with a PhD and 7+ years of experience '
         'defining technical strategy and delivering enterprise-grade AI platforms across '
-        'mining and resources. Proven track record owning the full ML lifecycle — from '
-        'architecture design through to production deployment and '
-        'platform governance — at organisations operating at industrial scale. Deep expertise '
+        'mining and resources. Proven track record owning the full ML lifecycle, from '
+        'architecture design through to production deployment and platform governance, '
+        'at organisations operating at industrial scale. Deep expertise '
         'spanning MLOps, LLM / GenAI pipelines, Vision AI, and edge computing on Azure and '
         'Databricks. Consistently drives cross-functional adoption of reusable frameworks, '
         'reduces delivery risk through robust monitoring, and translates complex business '
@@ -140,15 +140,15 @@ def build_pdf(path='cv.pdf'):
 
     skills = [
         ('Cloud & Data Platforms',
-         'Azure (AI Foundry, Azure ML, IoT Edge/Hub, AI Search, Azure OpenAI, DevOps), '
-         'Databricks, AWS'),
+         'Databricks, Azure (AI Foundry, Azure ML, IoT Edge/Hub, Azure OpenAI, DevOps), '
+         'AWS'),
         ('MLOps & DevOps',
          'MLflow, Azure Pipelines, Terraform, Bicep, Docker, CI/CD pipeline design'),
         ('LLMs & Generative AI',
-         'Azure AI Foundry, Claude, LightRAG, GraphRAG, AutoGen, RAG pipeline design, '
+         'Azure AI Foundry, Claude Code, LightRAG, Microsoft AgentFramework, RAG pipeline design, '
          'multi-agent orchestration'),
         ('ML & Data Engineering',
-         'XGBoost, LightGBM, YOLO, PySpark, Python, SQL'),
+         'XGBoost, LightGBM, Python, PySpark, Pandas, SQL'),
         ('Leadership & Architecture',
          'Enterprise platform strategy, reusable framework design, stakeholder engagement, '
          'data governance, technical mentoring'),
@@ -171,15 +171,12 @@ def build_pdf(path='cv.pdf'):
     story.append(Paragraph('South32  ·  Perth, WA', styles['company']))
     for b in [
         'Pioneered an air-gapped edge ML deployment pattern (Azure IoT Edge, ACR, Databricks Apps) '
-        'enabling model inference on isolated industrial sites with zero internet connectivity — '
+        'enabling model inference on isolated industrial sites with zero internet connectivity; '
         'adopted as the enterprise-wide standard across all remote operations.',
-        'Architected and led delivery of a centralised Data Science platform (Azure Databricks, '
-        'MLflow, Azure Pipelines) that standardised MLOps workflows across 6+ business units, '
-        'cutting average model deployment cycle from ~3 weeks to under 5 days.',
         'Defined the technical strategy and built a unified AI platform (Azure AI Search, '
         'Azure OpenAI, Cosmos DB) that reduced time-to-production for new LLM applications '
         'by ~60%, enabling multiple product teams to ship independently.',
-        'Led technical governance for the ML platform — authoring standards, reviewing '
+        'Led technical governance for the ML platform including authoring standards, reviewing '
         'architectures, and mentoring data scientists across business units to drive '
         'consistent, production-quality delivery.',
         'Delivered GenAI-powered document intelligence (LightRAG, Azure AI Foundry) across '
@@ -197,8 +194,9 @@ def build_pdf(path='cv.pdf'):
     ))
     story.append(Paragraph('South32  ·  Perth, WA', styles['company']))
     for b in [
-        'Designed CI/CD pipelines (Azure DevOps) to automate model training, validation, '
-        'and deployment — reducing manual release effort by ~70% and eliminating '
+        'Architected and led delivery of a centralised Data Science platform (Azure Databricks, '
+        'MLflow, Azure Pipelines) that standardised MLOps workflows across 6+ business units, '
+        'cutting the average model deployment cycle from ~3 weeks to under 5 days and eliminating '
         'ad-hoc deployment risk.',
         'Led advanced feature engineering and exploratory analysis at scale using PySpark '
         'and scikit-learn across large industrial datasets.',
@@ -266,12 +264,12 @@ def build_pdf(path='cv.pdf'):
     # ── Education ─────────────────────────────────────────────────────────
     story += section_title('Education', styles)
 
-    story.append(job_row('PhD — Environmental Engineering', 'Feb 2015 – Feb 2019', styles, col_w))
+    story.append(job_row('PhD in Environmental Engineering', 'Feb 2015 – Feb 2019', styles, col_w))
     story.append(Paragraph('University of Western Australia', styles['company']))
     story.append(Paragraph(
         'Thesis: Application of machine learning algorithms in urban catchments. '
-        '5 peer-reviewed publications in <i>Geoscientific Model Development</i>, '
-        '<i>Water Resources Research</i>, and other journals (see Selected Publications).',
+        'Five peer-reviewed publications in <i>Geoscientific Model Development</i>, '
+        '<i>Water Resources Research</i>, and other journals.',
         styles['body']
     ))
 

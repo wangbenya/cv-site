@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Chen — Machine Learning Engineer</title>
+  <title>Dr Benya Wang — Machine Learning Engineer</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,24 +14,24 @@
   <!-- ─── Navigation ─────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a class="nav-logo" href="#">Alex Chen</a>
+      <a class="nav-logo" href="#">Benya Wang</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="btn-nav" href="cv.pdf" download>Download CV</a>
+      <a class="btn-nav" href="Benya_Wang_CV.pdf" download>Download CV</a>
       <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="cv.pdf" download class="btn-nav">Download CV</a>
+      <a href="Benya_Wang_CV.pdf" download class="btn-nav">Download CV</a>
     </div>
   </nav>
 
@@ -39,15 +39,16 @@
   <section id="hero">
     <canvas id="particleCanvas"></canvas>
     <div class="hero-content reveal">
-      <span class="hero-eyebrow">Machine Learning Engineer</span>
-      <h1>Hi, I'm Alex Chen —<br>I build machines<br><em>that learn.</em></h1>
+      <span class="hero-eyebrow">Machine Learning Engineer · PhD</span>
+      <h1>Hi, I'm Benya —<br>I build AI<br><em>that scales.</em></h1>
       <p class="hero-sub">
-        Turning messy data into elegant models, and elegant models into<br>
-        products people actually use.
+        From edge deployments in remote mines to GenAI pipelines at enterprise scale —
+        I turn hard problems into production-ready AI systems.
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="cv.pdf" download>Download CV</a>
+        <a class="btn-primary" href="Benya_Wang_CV.pdf" download>Download CV</a>
         <a class="btn-ghost" href="#about">My Story &darr;</a>
+        <a class="btn-ghost" href="https://linkedin.com/in/benya-wang-0a8aa3bb" target="_blank">LinkedIn &nearr;</a>
       </div>
     </div>
   </section>
@@ -57,33 +58,30 @@
     <div class="container reveal">
       <div class="about-grid">
         <div class="about-portrait">
-          <div class="portrait-placeholder">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="60" cy="45" r="28" fill="#FF6B35" opacity="0.25"/>
-              <ellipse cx="60" cy="105" rx="42" ry="30" fill="#FF6B35" opacity="0.15"/>
-              <circle cx="60" cy="45" r="22" fill="#FF6B35" opacity="0.4"/>
-            </svg>
-            <span>Your photo here</span>
-          </div>
+          <img src="js/photo.jpg" alt="Benya Wang" class="portrait-photo" />
         </div>
         <div class="about-text">
           <h2>The story so far</h2>
           <p>
-            I didn't set out to be a machine learning engineer. I started as a curious kid
-            who stayed up too late watching neural networks learn to play video games on
-            YouTube. Eventually that curiosity found its way into a mathematics degree, a few
-            research papers, and a career spent at the intersection of statistics and software.
+            I started out studying environmental systems, but data kept pulling me deeper.
+            My PhD at the University of Western Australia — applying machine learning to
+            urban catchment modelling — led to five peer-reviewed publications and the
+            realisation that the most interesting problems live at the edge of messy reality
+            and principled computation.
           </p>
           <p>
-            Over the past six years I've built recommendation engines that serve millions of
-            users, fine-tuned language models for domain-specific tasks, and coached teams
-            on how to deploy ML reliably in production — not just in notebooks. I care
-            deeply about the gap between "it works on my laptop" and "it works at scale."
+            That curiosity has driven 7+ years building enterprise AI platforms in the
+            resources industry, first at Rio Tinto and now at South32. I've shipped everything
+            from predictive maintenance models for 1,700 km rail networks to air-gapped edge
+            ML deployments that run on isolated mine sites with zero internet — and become the
+            enterprise standard. I care deeply about the gap between "it works in a notebook"
+            and "it runs reliably at scale."
           </p>
           <p>
-            Outside of work you'll find me hiking, making pour-over coffee with a
-            spreadsheet of brew variables, or mentoring junior engineers who remind me why
-            this field is so exciting.
+            Today my focus is on LLMs, GenAI pipelines, and making ML platforms that entire
+            organisations can actually use — not just one team. Outside of work, I'm usually
+            mentoring junior engineers, exploring the latest in multi-agent AI, or finding
+            excuses to spend time in the outdoors.
           </p>
         </div>
       </div>
@@ -96,30 +94,38 @@
       <h2>What I work with</h2>
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Languages</h3>
+          <h3>Cloud &amp; Data Platforms</h3>
           <div class="tags">
-            <span>Python</span><span>SQL</span><span>Bash</span><span>R</span>
+            <span>Azure AI Foundry</span><span>Azure ML</span><span>Databricks</span>
+            <span>IoT Edge/Hub</span><span>Azure OpenAI</span><span>AWS</span>
           </div>
         </div>
         <div class="skill-group">
-          <h3>ML / DL Frameworks</h3>
+          <h3>MLOps &amp; DevOps</h3>
           <div class="tags">
-            <span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span>
-            <span>HuggingFace</span><span>XGBoost</span><span>LightGBM</span>
+            <span>MLflow</span><span>Azure Pipelines</span><span>Terraform</span>
+            <span>Bicep</span><span>Docker</span><span>CI/CD</span>
           </div>
         </div>
         <div class="skill-group">
-          <h3>MLOps &amp; Cloud</h3>
+          <h3>LLMs &amp; Generative AI</h3>
           <div class="tags">
-            <span>MLflow</span><span>Kubeflow</span><span>Docker</span>
-            <span>Kubernetes</span><span>GCP</span><span>AWS SageMaker</span>
+            <span>LightRAG</span><span>GraphRAG</span><span>AutoGen</span>
+            <span>RAG pipelines</span><span>Multi-agent orchestration</span>
           </div>
         </div>
         <div class="skill-group">
-          <h3>Data &amp; Infra</h3>
+          <h3>ML &amp; Data Engineering</h3>
           <div class="tags">
-            <span>Spark</span><span>Airflow</span><span>dbt</span>
-            <span>BigQuery</span><span>Kafka</span>
+            <span>XGBoost</span><span>LightGBM</span><span>YOLO</span>
+            <span>PySpark</span><span>Python</span><span>SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Leadership &amp; Architecture</h3>
+          <div class="tags">
+            <span>Platform strategy</span><span>Framework design</span>
+            <span>Data governance</span><span>Technical mentoring</span>
           </div>
         </div>
       </div>
@@ -136,16 +142,16 @@
           <div class="timeline-dot"></div>
           <div class="timeline-body">
             <div class="timeline-meta">
-              <span class="company">Luminary AI</span>
-              <span class="period">2022 — Present</span>
+              <span class="company">South32</span>
+              <span class="period">Apr 2023 – Present</span>
             </div>
-            <h3>Senior Machine Learning Engineer</h3>
-            <p>
-              Led the design and deployment of a real-time personalisation engine that
-              increased user engagement by 34% across a platform of 8 million active users.
-              Introduced a model-monitoring framework that caught three silent regressions
-              before they reached production — a first for the team.
-            </p>
+            <h3>Specialist Machine Learning Engineer</h3>
+            <ul class="timeline-bullets">
+              <li>Pioneered an air-gapped edge ML deployment pattern (Azure IoT Edge, ACR, Databricks Apps) enabling model inference on isolated industrial sites with zero internet connectivity; adopted as the enterprise-wide standard across all remote operations.</li>
+              <li>Defined the technical strategy for a unified AI platform (Azure AI Search, Azure OpenAI) that cut time-to-production for LLM applications by ~60%, enabling multiple product teams to ship independently.</li>
+              <li>Led ML platform governance: authoring standards, reviewing architectures, and mentoring data scientists across 6+ business units to drive consistent, production-quality delivery.</li>
+              <li>Delivered GenAI-powered document intelligence (LightRAG, Azure AI Foundry) across geoscience and safety corpora, surfacing actionable insights from previously unstructured data at enterprise scale.</li>
+            </ul>
           </div>
         </div>
 
@@ -153,15 +159,15 @@
           <div class="timeline-dot"></div>
           <div class="timeline-body">
             <div class="timeline-meta">
-              <span class="company">DataForge Inc.</span>
-              <span class="period">2020 — 2022</span>
+              <span class="company">South32</span>
+              <span class="period">Jan 2022 – Apr 2023</span>
             </div>
-            <h3>Machine Learning Engineer</h3>
-            <p>
-              Built an NLP pipeline for contract analysis that reduced manual review time
-              by 60%. Collaborated closely with legal and product teams — a reminder that
-              the best models are nothing without clear communication with stakeholders.
-            </p>
+            <h3>Specialist Data Scientist</h3>
+            <ul class="timeline-bullets">
+              <li>Architected a centralised Data Science platform (Azure Databricks, MLflow, Azure Pipelines) that standardised MLOps workflows across the business, cutting the average deployment cycle from ~3 weeks to under 5 days.</li>
+              <li>Designed and deployed a Vision AI safety system (YOLO, Supervision) for automated stop-sign monitoring, directly improving operational safety compliance.</li>
+              <li>Implemented production multi-agent LLM pipelines (GraphRAG, AutoGen) to extract structured insights from HR records, safety incident reports, and geoscience corpora.</li>
+            </ul>
           </div>
         </div>
 
@@ -169,65 +175,47 @@
           <div class="timeline-dot"></div>
           <div class="timeline-body">
             <div class="timeline-meta">
-              <span class="company">University of Edinburgh</span>
-              <span class="period">2018 — 2020</span>
+              <span class="company">Rio Tinto</span>
+              <span class="period">Jan 2021 – Jan 2022</span>
             </div>
-            <h3>MSc Artificial Intelligence &amp; Research Assistant</h3>
-            <p>
-              Graduated with distinction. Co-authored a paper on graph neural networks for
-              molecular property prediction, published at NeurIPS 2020. My first real taste
-              of what it means to push the boundary of what machines can do.
-            </p>
+            <h3>Data Scientist</h3>
+            <ul class="timeline-bullets">
+              <li>Engineered serverless data pipelines (AWS Lambda, Glue, Athena) for real-time production analytics supporting operational decision-making.</li>
+              <li>Led ML-driven optimisation of ore blending strategies, improving resource utilisation and reducing annual operational costs.</li>
+              <li>Won an internal Hackathon for diamond image classification using TensorFlow and transfer learning.</li>
+            </ul>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Projects ───────────────────────────────────── -->
-  <section id="projects">
-    <div class="container reveal">
-      <h2>Things I've built</h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-icon">&#x1F9E0;</div>
-          <h3>SentimentStream</h3>
-          <p>
-            A streaming sentiment analysis system processing 50k social-media posts per
-            minute, using a fine-tuned DistilBERT model served via FastAPI and Kafka.
-          </p>
-          <div class="tags small">
-            <span>PyTorch</span><span>FastAPI</span><span>Kafka</span><span>Docker</span>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <div class="timeline-meta">
+              <span class="company">Rio Tinto</span>
+              <span class="period">Feb 2019 – Jan 2021</span>
+            </div>
+            <h3>Graduate Data Scientist</h3>
+            <ul class="timeline-bullets">
+              <li>Developed predictive maintenance models (LightGBM, Random Forest) for a 1,700 km rail network, reducing unplanned downtime through early fault detection.</li>
+              <li>Containerised models in Docker and deployed via AWS SageMaker, establishing repeatable deployment and rollback processes for the team.</li>
+              <li>Delivered spatial analytics dashboards (GIS maps, Plotly Dash) enabling operational teams to make data-driven decisions in real time.</li>
+            </ul>
           </div>
-          <a class="project-link" href="#" target="_blank">View on GitHub &rarr;</a>
         </div>
 
-        <div class="project-card">
-          <div class="project-icon">&#x1F4CA;</div>
-          <h3>ForecastKit</h3>
-          <p>
-            An open-source time-series forecasting library with automatic model selection,
-            cross-validation, and a dead-simple API. 1.2k GitHub stars and counting.
-          </p>
-          <div class="tags small">
-            <span>Python</span><span>statsmodels</span><span>Prophet</span>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <div class="timeline-meta">
+              <span class="company">University of Western Australia</span>
+              <span class="period">Feb 2015 – Feb 2019</span>
+            </div>
+            <h3>PhD in Environmental Engineering</h3>
+            <ul class="timeline-bullets">
+              <li>Thesis: Application of machine learning algorithms in urban catchments.</li>
+              <li>Five peer-reviewed publications in <em>Geoscientific Model Development</em>, <em>Water Resources Research</em>, and other journals.</li>
+            </ul>
           </div>
-          <a class="project-link" href="#" target="_blank">View on GitHub &rarr;</a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">&#x1F527;</div>
-          <h3>ML Monitoring Dashboard</h3>
-          <p>
-            A lightweight dashboard for tracking data drift and model performance in
-            production, built with Grafana and a custom Python metrics collector.
-          </p>
-          <div class="tags small">
-            <span>Python</span><span>Grafana</span><span>Prometheus</span>
-          </div>
-          <a class="project-link" href="#" target="_blank">View on GitHub &rarr;</a>
         </div>
 
       </div>
@@ -239,22 +227,19 @@
     <div class="container reveal">
       <h2>Let's talk</h2>
       <p class="contact-sub">
-        Whether you have a role in mind, a project to discuss, or just want to nerd out
-        about model calibration — my inbox is open.
+        Whether you have a role in mind, a project to collaborate on, or just want to
+        discuss ML at scale — my inbox is open.
       </p>
-      <a class="btn-primary large" href="mailto:alex@example.com">Say hello</a>
+      <a class="btn-primary large" href="mailto:benya.wang@hotmail.com">Say hello</a>
       <div class="social-links">
-        <a href="#" target="_blank" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .3A12 12 0 0 0 0 12.3c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 3.7 18 4 18 4c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.3 12 12 0 0 0 12 .3z"/></svg>
-        </a>
-        <a href="#" target="_blank" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/benya-wang-0a8aa3bb" target="_blank" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.5v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8A1.8 1.8 0 0 0 0 1.8v20.4A1.8 1.8 0 0 0 1.8 24h20.4A1.8 1.8 0 0 0 24 22.2V1.8A1.8 1.8 0 0 0 22.2 0z"/></svg>
         </a>
-        <a href="mailto:alex@example.com" aria-label="Email">
+        <a href="mailto:benya.wang@hotmail.com" aria-label="Email">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
-      <p class="footer-copy">&copy; 2024 Alex Chen. Built with care and a lot of coffee.</p>
+      <p class="footer-copy">&copy; 2025 Dr Benya Wang · Perth, WA</p>
     </div>
   </footer>
 
