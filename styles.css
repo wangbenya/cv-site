@@ -229,7 +229,7 @@ section {
 #about { background: var(--bg-alt); }
 .about-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 4rem;
   align-items: start;
 }
@@ -246,8 +246,8 @@ section {
   position: relative;
 }
 .portrait-photo {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -385,8 +385,102 @@ section {
   line-height: 1.6;
 }
 
-/* ─── Projects ─────────────────────────────────────── */
+/* ─── Projects Showcase ────────────────────────────── */
 #projects {}
+
+.showcase-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.showcase-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.showcase-card {
+  flex: 0 0 calc(88% - 0.75rem);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+}
+.showcase-card-bg {
+  height: 440px;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 2.5rem;
+  position: relative;
+}
+.showcase-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+}
+.showcase-card-label {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 480px;
+}
+.showcase-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.75rem;
+  gap: 2rem;
+}
+.showcase-info {
+  flex: 1;
+}
+.showcase-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.showcase-desc {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  max-width: 620px;
+}
+.showcase-nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+.showcase-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), background var(--transition), color var(--transition), transform var(--transition);
+}
+.showcase-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.showcase-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ─── Projects (legacy grid) ───────────────────────── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -479,6 +573,11 @@ section {
   .timeline-dot { left: -1.9rem; }
 
   .projects-grid { grid-template-columns: 1fr; }
+
+  .showcase-card { flex: 0 0 calc(94% - 0.75rem); }
+  .showcase-card-bg { height: 280px; padding: 1.5rem; }
+  .showcase-footer { flex-direction: column; gap: 1.25rem; }
+  .showcase-nav { align-self: flex-end; }
 }
 
 @media (max-width: 480px) {

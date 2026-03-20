@@ -69,3 +69,66 @@
   sections.forEach(s => sectionObserver.observe(s));
 
 })();
+
+/* ═══════════════════════════════════════════════════════
+   Projects Showcase Carousel
+   ═══════════════════════════════════════════════════════ */
+(function () {
+  const track    = document.getElementById('showcaseTrack');
+  const prevBtn  = document.getElementById('showcasePrev');
+  const nextBtn  = document.getElementById('showcaseNext');
+  const titleEl  = document.getElementById('showcaseTitle');
+  const descEl   = document.getElementById('showcaseDesc');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const projects = [
+    {
+      title: 'Data Science Platform',
+      desc:  'Architected a centralised Data Science platform (Azure Databricks, MLflow, Azure Pipelines) that standardised MLOps workflows across the business, cutting the average deployment cycle from ~3 weeks to under 5 days.'
+    },
+    {
+      title: 'Unified AI Platform',
+      desc:  'Defined the technical strategy for a unified AI platform (Azure AI Search, Azure OpenAI) that cut time-to-production for LLM applications by ~60%, enabling multiple product teams to ship independently.'
+    },
+    {
+      title: 'Air-gapped Edge ML Platform',
+      desc:  'Pioneered an edge ML deployment pattern using Azure IoT Edge, ACR, and Databricks Apps — enabling model inference on isolated mine sites with zero internet. Adopted as the enterprise-wide standard across all remote operations.'
+    },
+    {
+      title: 'Vision AI Safety System',
+      desc:  'Designed and deployed a computer vision safety system using YOLO and Supervision for automated stop-sign monitoring, directly improving operational safety compliance across mining sites.'
+    },
+    {
+      title: 'Predictive Maintenance ML',
+      desc:  'Built predictive maintenance models (LightGBM, Random Forest) for a 1,700 km rail network, reducing unplanned downtime through early fault detection. Containerised and deployed via AWS SageMaker.'
+    }
+  ];
+
+  let current = 0;
+
+  function getCardWidth() {
+    const card = track.querySelector('.showcase-card');
+    if (!card) return 0;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 24;
+    return card.offsetWidth + gap;
+  }
+
+  function update() {
+    track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+    titleEl.textContent = projects[current].title;
+    descEl.textContent  = projects[current].desc;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === projects.length - 1;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (current > 0) { current--; update(); }
+  });
+  nextBtn.addEventListener('click', () => {
+    if (current < projects.length - 1) { current++; update(); }
+  });
+
+  update();
+})();
