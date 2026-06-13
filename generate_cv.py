@@ -123,15 +123,13 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     # ── Career Profile ────────────────────────────────────────────────────
     story += section_title('Career Profile', styles)
     story.append(Paragraph(
-        'Machine Learning Engineer with a PhD and 7+ years of experience '
-        'defining technical strategy and delivering enterprise-grade AI platforms across '
-        'mining and resources. Proven track record owning the full ML lifecycle, from '
-        'architecture design through to production deployment and platform governance, '
-        'at organisations operating at industrial scale. Deep expertise '
-        'spanning MLOps, LLM / GenAI pipelines, Vision AI, and edge computing on Azure and '
-        'Databricks. Consistently drives cross-functional adoption of reusable frameworks, '
-        'reduces delivery risk through robust monitoring, and translates complex business '
-        'problems into scalable AI solutions.',
+        'Machine Learning Engineer and Analytics Lead with a PhD and 7+ years of experience '
+        'delivering enterprise-grade AI and analytics platforms across mining and resources. '
+        'Proven track record owning the full ML lifecycle from architecture design through '
+        'to production deployment and governance at industrial scale. Deep expertise in '
+        'MLOps, LLM / GenAI pipelines, Vision AI, and edge computing on Azure, Databricks, '
+        'and AWS. Translates complex business problems into scalable AI solutions through '
+        'reusable governance frameworks and cross-functional adoption.',
         styles['body']
     ))
 
@@ -143,14 +141,14 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
          'Databricks, Azure (AI Foundry, Azure ML, IoT Edge/Hub, Azure OpenAI, DevOps), '
          'AWS'),
         ('MLOps & DevOps',
-         'MLflow, Azure Pipelines, Terraform, Bicep, Docker, CI/CD pipeline design'),
+         'MLflow, Azure Pipelines, GitHub Actions, Terraform, Bicep, Docker, CI/CD pipeline design'),
         ('LLMs & Generative AI',
-         'Azure AI Foundry, Claude Code, LightRAG, Microsoft AgentFramework, RAG pipeline design, '
-         'multi-agent orchestration'),
+         'Azure AI Foundry, Claude Code, LangChain, LightRAG, Microsoft Copilot Studio, '
+         'RAG pipeline design, multi-agent orchestration'),
         ('ML & Data Engineering',
          'XGBoost, LightGBM, Python, PySpark, Pandas, SQL'),
         ('Leadership & Architecture',
-         'Enterprise platform strategy, reusable framework design, stakeholder engagement, '
+         'Enterprise platform strategy, AI governance framework design, stakeholder engagement, '
          'data governance, technical mentoring'),
     ]
     for cat, val in skills:
@@ -182,6 +180,15 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'Delivered GenAI-powered document intelligence (LightRAG, Azure AI Foundry) across '
         'geoscience and safety corpora, surfacing actionable insights from previously '
         'unstructured data at enterprise scale.',
+        'Partnered with Cyber and Enterprise Architecture teams to design a Microsoft Copilot '
+        'Studio governance framework and a GitHub / GitHub Copilot governance framework, '
+        'establishing enterprise-wide standards for AI-assisted development, access controls, '
+        'and compliant deployment; supported the organisational migration from Azure DevOps '
+        'to GitHub at scale.',
+        'Served as Acting Data Science Lead May–Jun 2026, maintaining delivery continuity '
+        'across active AI platform workstreams; co-designed the platform production support '
+        'model with the Operational Digital Technology team, defining ownership, escalation '
+        'paths, and SLA structures.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
     story.append(Spacer(1, 0.15 * cm))
@@ -296,7 +303,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
 
 
     doc.build(story)
-    print(f'✓  CV saved to {path}')
+    print(f'CV saved to {path}')
 
 
 if __name__ == '__main__':
