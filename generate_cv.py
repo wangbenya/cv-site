@@ -138,15 +138,15 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
 
     skills = [
         ('Cloud & Data Platforms',
-         'Databricks, Azure (AI Foundry, Azure ML, IoT Edge/Hub, Azure OpenAI, DevOps), '
-         'AWS'),
+         'Databricks (data warehouse, ETL/ELT pipelines, workflow orchestration), '
+         'Azure (AI Foundry, Azure ML, IoT Edge/Hub, Azure OpenAI, DevOps), AWS'),
         ('MLOps & DevOps',
          'MLflow, Azure Pipelines, GitHub Actions, Terraform, Bicep, Docker, CI/CD pipeline design'),
         ('LLMs & Generative AI',
          'Azure AI Foundry, Claude Code, LangChain, LightRAG, Microsoft Copilot Studio, '
          'RAG pipeline design, multi-agent orchestration'),
         ('ML & Data Engineering',
-         'XGBoost, LightGBM, Python, PySpark, Pandas, SQL'),
+         'XGBoost, LightGBM, Python, PySpark, Pandas, SQL, Power BI'),
         ('Leadership & Architecture',
          'Enterprise platform strategy, AI governance framework design, stakeholder engagement, '
          'data governance, technical mentoring'),
