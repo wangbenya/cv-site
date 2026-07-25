@@ -123,7 +123,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     # ── Career Profile ────────────────────────────────────────────────────
     story += section_title('Career Profile', styles)
     story.append(Paragraph(
-        'Machine Learning Engineer and Analytics Lead with a PhD and 7+ years of experience '
+        'Machine Learning Engineer with a PhD and 8 years of experience '
         'delivering enterprise-grade AI and analytics platforms across mining and resources. '
         'Proven track record owning the full ML lifecycle from architecture design through '
         'to production deployment and governance at industrial scale. Deep expertise in '
