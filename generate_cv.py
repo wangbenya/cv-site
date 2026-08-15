@@ -1,5 +1,5 @@
 """
-Generate CV PDF for Dr Benya Wang — Machine Learning Engineer.
+Generate CV PDF for Dr Benya Wang — AI & Data Platforms Engineer.
 Usage: pip install reportlab && python generate_cv.py
 Output: Benya_Wang_CV.pdf in the same directory.
 """
@@ -35,33 +35,33 @@ def build_styles():
             textColor=NAVY, spaceAfter=2, leading=28),
         'contact': S('contact',
             fontName='Helvetica', fontSize=10,
-            textColor=SUBTLE, spaceAfter=4, leading=13, alignment=TA_LEFT),
+            textColor=SUBTLE, spaceAfter=3, leading=13, alignment=TA_LEFT),
         'contact_right': S('contact_right',
             fontName='Helvetica', fontSize=10,
-            textColor=SUBTLE, spaceAfter=4, leading=13, alignment=TA_RIGHT),
+            textColor=SUBTLE, spaceAfter=3, leading=13, alignment=TA_RIGHT),
         'section_head': S('section_head',
             fontName='Helvetica-Bold', fontSize=10,
-            textColor=ACCENT, spaceBefore=10, spaceAfter=3,
+            textColor=ACCENT, spaceBefore=8, spaceAfter=2,
             leading=12, letterSpacing=1.2),
         'job_title': S('job_title',
             fontName='Helvetica-Bold', fontSize=10.5,
-            textColor=NAVY, spaceAfter=1, leading=14),
+            textColor=NAVY, spaceAfter=1, leading=13),
         'company': S('company',
             fontName='Helvetica', fontSize=10,
-            textColor=SUBTLE, spaceAfter=2, leading=13),
+            textColor=SUBTLE, spaceAfter=2, leading=12),
         'body': S('body',
             fontName='Helvetica', fontSize=10,
-            textColor=BODY, spaceAfter=4, leading=14),
+            textColor=BODY, spaceAfter=3, leading=13),
         'bullet': S('bullet',
             fontName='Helvetica', fontSize=10,
-            textColor=BODY, spaceAfter=2, leading=14,
+            textColor=BODY, spaceAfter=1, leading=13,
             leftIndent=11, firstLineIndent=-11),
         'skill_cat': S('skill_cat',
             fontName='Helvetica-Bold', fontSize=10,
             textColor=NAVY, spaceAfter=1, leading=12),
         'skill_val': S('skill_val',
             fontName='Helvetica', fontSize=10,
-            textColor=BODY, spaceAfter=3, leading=13),
+            textColor=BODY, spaceAfter=2, leading=13),
         'pub': S('pub',
             fontName='Helvetica', fontSize=10,
             textColor=BODY, spaceAfter=3, leading=13,
@@ -71,7 +71,7 @@ def build_styles():
 
 def hr(color=RULE, thickness=0.6):
     return HRFlowable(width='100%', thickness=thickness,
-                      color=color, spaceAfter=5, spaceBefore=0)
+                      color=color, spaceAfter=4, spaceBefore=0)
 
 
 def section_title(text, styles):
@@ -103,7 +103,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         pagesize=A4,
         leftMargin=MARGIN, rightMargin=MARGIN,
         topMargin=MARGIN, bottomMargin=MARGIN,
-        title='Dr Benya Wang — Machine Learning Engineer',
+        title='Dr Benya Wang — AI & Data Platforms Engineer',
         author='Benya Wang',
     )
 
@@ -123,13 +123,14 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     # ── Career Profile ────────────────────────────────────────────────────
     story += section_title('Career Profile', styles)
     story.append(Paragraph(
-        'Machine Learning Engineer with a PhD and 8 years of experience '
-        'delivering enterprise-grade AI and analytics platforms across mining and resources. '
-        'Proven track record owning the full ML lifecycle from architecture design through '
-        'to production deployment and governance at industrial scale. Deep expertise in '
-        'MLOps, LLM / GenAI pipelines, Vision AI, and edge computing on Azure, Databricks, '
-        'and AWS. Translates complex business problems into scalable AI solutions through '
-        'reusable governance frameworks and cross-functional adoption.',
+        'AI &amp; Data Platforms Engineer with a PhD and 8 years of experience designing and '
+        'improving enterprise-grade data and AI platforms across mining and resources. Proven '
+        'track record establishing platform standards, engineering guides, and self-service '
+        'patterns that let engineering and analytics groups build independently, and partnering '
+        'across data, visualisation, AI, and governance functions to turn emerging capability '
+        '(GenAI, agentic systems, knowledge bases) into production-grade platform offerings. '
+        'Deep expertise in MLOps, LLM / GenAI pipelines, Vision AI, and edge computing on '
+        'Azure, Databricks, and AWS.',
         styles['body']
     ))
 
@@ -138,13 +139,13 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
 
     skills = [
         ('Cloud & Data Platforms',
-         'Databricks (data warehouse, ETL/ELT pipelines, workflow orchestration), '
+         'Databricks (data warehouse, workflow orchestration), '
          'Azure (AI Foundry, Azure ML, IoT Edge/Hub, Azure OpenAI, DevOps), AWS'),
         ('MLOps & DevOps',
          'MLflow, Azure Pipelines, GitHub Actions, Terraform, Bicep, Docker, CI/CD pipeline design'),
         ('LLMs & Generative AI',
-         'Azure AI Foundry, Claude Code, LangChain, LightRAG, Microsoft Copilot Studio, '
-         'RAG pipeline design, multi-agent orchestration'),
+         'Azure AI Foundry, Claude Code, LangChain, LightRAG, GraphRAG, Microsoft Copilot Studio, '
+         'RAG pipeline design, vector stores, multi-agent orchestration, agentic platforms'),
         ('ML & Data Engineering',
          'XGBoost, LightGBM, Python, PySpark, Pandas, SQL, Power BI'),
         ('Leadership & Architecture',
@@ -168,18 +169,19 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     ))
     story.append(Paragraph('South32  ·  Perth, WA', styles['company']))
     for b in [
+        'Led technical governance for the ML platform including authoring standards, engineering '
+        'guides, and platform patterns; reviewing architectures; and mentoring data scientists '
+        'across business units to drive consistent, production-quality delivery.',
+        'Defined the technical strategy and built a unified AI platform (Azure AI Search, '
+        'Azure OpenAI, Cosmos DB) with self-service patterns and reference implementations that '
+        'reduced time-to-production for new LLM applications by ~60%, enabling multiple product '
+        'teams to ship independently.',
         'Pioneered an air-gapped edge ML deployment pattern (Azure IoT Edge, ACR, Databricks Apps) '
         'enabling model inference on isolated industrial sites with zero internet connectivity; '
         'adopted as the enterprise-wide standard across all remote operations.',
-        'Defined the technical strategy and built a unified AI platform (Azure AI Search, '
-        'Azure OpenAI, Cosmos DB) that reduced time-to-production for new LLM applications '
-        'by ~60%, enabling multiple product teams to ship independently.',
-        'Led technical governance for the ML platform including authoring standards, reviewing '
-        'architectures, and mentoring data scientists across business units to drive '
-        'consistent, production-quality delivery.',
-        'Delivered GenAI-powered document intelligence (LightRAG, Azure AI Foundry) across '
-        'geoscience and safety corpora, surfacing actionable insights from previously '
-        'unstructured data at enterprise scale.',
+        'Delivered GenAI-powered knowledge base and document intelligence capabilities (LightRAG, '
+        'Azure AI Foundry) across geoscience and safety corpora, surfacing actionable insights '
+        'from previously unstructured data at enterprise scale.',
         'Partnered with Cyber and Enterprise Architecture teams to design a Microsoft Copilot '
         'Studio governance framework and a GitHub / GitHub Copilot governance framework, '
         'establishing enterprise-wide standards for AI-assisted development, access controls, '
@@ -191,7 +193,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'paths, and SLA structures.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
-    story.append(Spacer(1, 0.15 * cm))
+    story.append(Spacer(1, 0.08 * cm))
 
     # South32 — Specialist Data Scientist
     story.append(job_row(
@@ -216,7 +218,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'exploration corpora.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
-    story.append(Spacer(1, 0.15 * cm))
+    story.append(Spacer(1, 0.08 * cm))
 
     # Rio Tinto — Data Scientist
     story.append(job_row(
@@ -234,7 +236,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'and transfer learning.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
-    story.append(Spacer(1, 0.15 * cm))
+    story.append(Spacer(1, 0.08 * cm))
 
     # Rio Tinto — Graduate Data Scientist
     story.append(job_row(
@@ -252,7 +254,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'operational teams to make data-driven decisions in real time.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
-    story.append(Spacer(1, 0.15 * cm))
+    story.append(Spacer(1, 0.08 * cm))
 
     # Rio Tinto — Intern
     story.append(job_row(
@@ -266,7 +268,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'preprocessing pipelines.',
         styles['bullet']
     ))
-    story.append(Spacer(1, 0.15 * cm))
+    story.append(Spacer(1, 0.08 * cm))
 
     # ── Education ─────────────────────────────────────────────────────────
     story += section_title('Education', styles)
