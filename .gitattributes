@@ -1,0 +1,4 @@
+# ReportLab PDFs contain no NUL bytes, so git misdetects them as text and
+# rewrites LF -> CRLF on Windows checkouts, corrupting the xref offsets.
+*.pdf binary
+*.png binary
