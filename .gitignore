@@ -1,3 +1,6 @@
 # Application-specific cover letters
 generate_cover_letter.py
 Benya_Wang_Cover_Letter.pdf
+
+# Per-application CV copies (the canonical Benya_Wang_CV.pdf stays tracked)
+Benya_Wang_CV_*.pdf
