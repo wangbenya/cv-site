@@ -1,5 +1,5 @@
 """
-Generate CV PDF for Dr Benya Wang — AI Architect (tailored: Alcoa Req-36794).
+Generate CV PDF for Dr Benya Wang - AI & ML Engineer (tailored: Alcoa Req-37776).
 Usage: pip install reportlab && python generate_cv.py
 Output: Benya_Wang_CV.pdf in the same directory.
 """
@@ -33,6 +33,9 @@ def build_styles():
         'name': S('name',
             fontName='Helvetica-Bold', fontSize=24,
             textColor=NAVY, spaceAfter=2, leading=28),
+        'subtitle': S('subtitle',
+            fontName='Helvetica', fontSize=12,
+            textColor=ACCENT, spaceBefore=1, spaceAfter=4, leading=14),
         'contact': S('contact',
             fontName='Helvetica', fontSize=10,
             textColor=SUBTLE, spaceAfter=3, leading=13, alignment=TA_LEFT),
@@ -54,14 +57,14 @@ def build_styles():
             textColor=BODY, spaceAfter=3, leading=13.4),
         'bullet': S('bullet',
             fontName='Helvetica', fontSize=10,
-            textColor=BODY, spaceAfter=2.6, leading=13.4,
+            textColor=BODY, spaceAfter=2.0, leading=13.4,
             leftIndent=11, firstLineIndent=-11),
         'skill_cat': S('skill_cat',
             fontName='Helvetica-Bold', fontSize=10,
             textColor=NAVY, spaceAfter=2, leading=12),
         'skill_val': S('skill_val',
             fontName='Helvetica', fontSize=10,
-            textColor=BODY, spaceAfter=3.6, leading=13.4),
+            textColor=BODY, spaceAfter=3.0, leading=13.4),
         'pub': S('pub',
             fontName='Helvetica', fontSize=10,
             textColor=BODY, spaceAfter=3, leading=13,
@@ -103,7 +106,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         pagesize=A4,
         leftMargin=MARGIN, rightMargin=MARGIN,
         topMargin=MARGIN, bottomMargin=MARGIN,
-        title='Dr Benya Wang — AI Architect',
+        title='Dr Benya Wang - AI & ML Engineer',
         author='Benya Wang',
     )
 
@@ -113,6 +116,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
 
     # ── Header ────────────────────────────────────────────────────────────
     story.append(Paragraph('Dr Benya Wang', styles['name']))
+    story.append(Paragraph('AI &amp; ML Engineer  ·  PhD', styles['subtitle']))
     story.append(Paragraph(
         'Email: benya.wang@hotmail.com  ·  Personal website: <a href="https://wangbenya.github.io/cv-site" color="#2E6DA4">wangbenya.github.io/cv-site</a>  ·  Perth, WA',
         styles['contact']
@@ -123,16 +127,16 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     # ── Career Profile ────────────────────────────────────────────────────
     story += section_title('Career Profile', styles)
     story.append(Paragraph(
-        'AI Architect with a PhD and 8 years of experience designing, governing, and scaling '
-        'enterprise-grade data science and AI platforms across mining and resources. Sets enterprise '
-        'AI standards, '
-        'reference architectures, and roadmaps, then guides delivery teams to build against them '
-        'through platform patterns, solution design review, and mentoring across business units. '
-        'Deep Azure specialisation (Azure AI Foundry, Azure OpenAI, Azure ML) alongside Databricks, '
-        'LLMOps and MLOps tooling, with a track record of taking Generative AI, RAG knowledge bases, '
-        'and agentic systems from proof of concept to secure production. Designs AI and security '
-        'governance frameworks with Cyber and Enterprise Architecture, and translates AI '
-        'capability into strategic priorities for business leaders.',
+        'AI and ML engineer with a PhD and 8 years taking AI from prototype to production '
+        'across mining and resources. Strongest on the deployment half: model endpoints, '
+        'containerised microservices, edge inference on disconnected sites, CI/CD, and the '
+        'MLOps tooling that keeps models running. Delivers Generative AI at enterprise scale '
+        'through RAG knowledge bases and agentic workflows on Azure (AI Foundry, Azure OpenAI, '
+        'AI Search, Azure ML) with Databricks and MLflow. Sets the standards, reference '
+        'architectures, and platform patterns that let delivery teams build the same way, and '
+        'designs responsible AI governance with Cyber and Enterprise Architecture. Works with '
+        'complex operational data (time-series, sensor, historian) across Australia, Africa, '
+        'and South America.',
         styles['body']
     ))
 
@@ -140,21 +144,23 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     story += section_title('Core Competencies', styles)
 
     skills = [
-        ('AI Architecture & Governance',
-         'AI governance framework design, secure-by-design patterns, '
-         'data architecture and governance'),
-        ('Generative AI & LLMs',
-         'Azure OpenAI, Azure AI Foundry, Azure AI Search, Microsoft Copilot Studio, LangChain, '
-         'LightRAG, GraphRAG, '
-         'Claude Code, RAG pipeline design, vector stores, multi-agent orchestration, agentic platforms'),
+        ('MLOps, Deployment & Responsible AI',
+         'Model endpoint deployment, AKS / ACI, Docker microservices, ACR, MLflow, '
+         'Azure DevOps / Pipelines, CI/CD design, edge inference (Azure IoT Edge), '
+         'documented AI workflows, AI governance frameworks'),
+        ('Generative AI & Agentic Systems',
+         'RAG pipeline design, agentic and multi-agent workflows, Azure OpenAI, Azure AI Foundry, '
+         'Azure AI Search, LangChain, LightRAG, GraphRAG, AutoGen, vector stores, '
+         'Microsoft Copilot Studio, Claude Code'),
         ('Azure & Data Platforms',
-         'Azure (ACR, IoT Edge/Hub, VNet, Azure ML), '
-         'Databricks (data warehouse, workflow orchestration), AWS'),
-        ('LLMOps, MLOps & DevOps',
-         'MLflow, Azure DevOps / Pipelines, Terraform, Bicep, Docker, AKS, ACI (containerised '
-         'microservices), model endpoint deployment, CI/CD pipeline design'),
-        ('ML & Data Engineering',
-         'Python, PySpark, Pandas, SQL, XGBoost, LightGBM, predictive analytics'),
+         'Azure (AI Foundry, Azure ML, AI Search, IoT Edge/Hub, ACR), '
+         'Databricks (Feature Store, workflow orchestration, data warehouse), AWS'),
+        ('Machine Learning & Modelling',
+         'Predictive analytics, time-series and sensor data modelling, feature engineering, '
+         'XGBoost, LightGBM, Random Forest, computer vision (YOLO), advanced process control'),
+        ('Engineering & Delivery',
+         'Python, PySpark, Pandas, SQL, stakeholder engagement, technical mentoring, '
+         'cross-site delivery across multiple time zones'),
     ]
     for cat, val in skills:
         story.append(Paragraph(cat, styles['skill_cat']))
@@ -173,31 +179,33 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
     ))
     story.append(Paragraph('South32  ·  Perth, WA', styles['company']))
     for b in [
-        'Led technical governance for the ML platform including authoring standards, engineering '
-        'guides, and platform patterns; reviewing architectures; and mentoring data scientists '
-        'across business units to drive consistent, production-quality delivery.',
+        'Designed and implemented end to end an air-gapped edge ML deployment pattern '
+        '(Azure IoT Edge, Databricks Apps), enabling model inference on isolated industrial '
+        'sites with zero internet connectivity; adopted as the standard across all remote '
+        'operations.',
+        'Built a safety chatbot and GenAI knowledge base over safety and geoscience corpora '
+        '(Azure AI Foundry, Azure AI Search, LightRAG), covering corpus exploration, chunking '
+        'strategy, retrieval tuning, and production deployment, giving operational teams '
+        'conversational access to guidance locked in unstructured documents.',
+        'Owned model deployment and optimisation, right-sizing the container runtime for '
+        'inference endpoints: ACI for lightweight, single-service workloads and AKS where '
+        'orchestration and scaling were required, packaging models as Docker microservices '
+        'published through ACR.',
+        'Applied responsible AI in practice: partnered with Cyber and Enterprise Architecture '
+        'to design a Microsoft Copilot Studio governance framework and a GitHub / GitHub Copilot '
+        'governance framework, establishing enterprise-wide standards for AI-assisted '
+        'development, access controls, and compliant deployment.',
         'Defined the technical strategy and built a unified AI platform (Azure AI Search, '
         'Azure OpenAI, Cosmos DB) with self-service patterns and reference implementations that '
         'reduced time-to-production for new LLM applications by ~60%, enabling multiple product '
         'teams to ship independently.',
-        'Built a safety chatbot and GenAI knowledge base over safety and geoscience corpora '
-        '(Azure AI Foundry, Azure AI Search, LightRAG, Azure Web App), giving operational teams '
-        'conversational access to guidance previously locked in unstructured documents.',
-        'Right-sized the container runtime for model inference endpoints — ACI for lightweight, '
-        'single-service workloads and AKS where orchestration and scaling were required — '
-        'packaging models as Docker microservices published through ACR.',
-        'Pioneered an air-gapped edge ML deployment pattern (Azure IoT Edge, Databricks Apps) '
-        'enabling model inference on isolated industrial sites with zero internet connectivity; '
-        'adopted as the standard across all remote operations.',
-        'Partnered with Cyber and Enterprise Architecture teams to design a Microsoft Copilot '
-        'Studio governance framework and a GitHub / GitHub Copilot governance framework, '
-        'establishing enterprise-wide standards for AI-assisted development, access controls, '
-        'and compliant deployment; supported the organisational migration from Azure DevOps '
-        'to GitHub at scale.',
+        'Authored the standards, engineering guides, and platform patterns that made AI delivery '
+        'repeatable and well documented across the business, and mentored data scientists across '
+        'business units to drive consistent, production-quality outcomes.',
         'Served as Acting Data Science Lead May–Jun 2026, maintaining delivery continuity '
-        'across active AI platform workstreams; co-designed the platform production support '
-        'model with the Operational Digital Technology team, defining ownership, escalation '
-        'paths, and SLA structures.',
+        'across active AI workstreams; co-designed the production support model with the '
+        'Operational Digital Technology team, defining ownership, escalation paths, and '
+        'SLA structures.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
     story.append(Spacer(1, 0.14 * cm))
@@ -214,19 +222,18 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'MLflow, Azure Pipelines) that standardised MLOps workflows across 6+ business units, '
         'cutting the average model deployment cycle from ~3 weeks to under 5 days and eliminating '
         'ad-hoc deployment risk.',
-        'Delivered advanced process control solutions for operations in Australia, Africa, and '
-        'South America, working with local technology teams at each site to improve recovery '
-        'and energy efficiency.',
+        'Delivered advanced process control solutions over plant time-series and sensor data for '
+        'operations in Australia, Africa, and South America, working with local technology teams '
+        'in each region to improve recovery and energy efficiency, coordinating delivery across '
+        'multiple time zones.',
         'Built reusable PySpark feature pipelines into a Databricks Feature Store over large-scale '
-        'industrial sensor data, replacing ad-hoc notebook preparation with versioned, '
-        'model-ready features.',
-        'Partnered with data governance teams to implement stewardship and metadata '
-        'management aligned with enterprise compliance policies.',
-        'Designed and deployed a Vision AI safety system (YOLO, Supervision) for automated '
-        'stop-sign monitoring, directly improving operational safety compliance.',
+        'industrial sensor and historian data, replacing ad-hoc notebook preparation with '
+        'versioned, model-ready features.',
         'Implemented production multi-agent LLM pipelines (GraphRAG, AutoGen) to extract '
         'structured insights from HR records, safety incident reports, and geoscience '
         'exploration corpora.',
+        'Designed and deployed a Vision AI safety system (YOLO, Supervision) for automated '
+        'stop-sign monitoring, directly improving operational safety compliance.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
     story.append(Spacer(1, 0.14 * cm))
@@ -243,8 +250,6 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'production analytics supporting operational decision-making.',
         'Led ML-driven optimisation of ore blending strategies, improving resource '
         'utilisation and reducing annual operational costs.',
-        'Won an internal Hackathon for diamond image classification using TensorFlow '
-        'and transfer learning.',
     ]:
         story.append(Paragraph(f'• {b}', styles['bullet']))
     story.append(Spacer(1, 0.14 * cm))
