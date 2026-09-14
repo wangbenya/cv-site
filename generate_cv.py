@@ -145,7 +145,7 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
 
     skills = [
         ('MLOps, Deployment & Responsible AI',
-         'Model endpoint deployment, AKS / ACI, Docker microservices, ACR, MLflow, '
+         'Model endpoint deployment, Docker microservices, ACR, MLflow, '
          'Azure DevOps / Pipelines, CI/CD design, edge inference (Azure IoT Edge), '
          'documented AI workflows, AI governance frameworks'),
         ('Generative AI & Agentic Systems',
@@ -187,10 +187,6 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         '(Azure AI Foundry, Azure AI Search, LightRAG), covering corpus exploration, chunking '
         'strategy, retrieval tuning, and production deployment, giving operational teams '
         'conversational access to guidance locked in unstructured documents.',
-        'Owned model deployment and optimisation, right-sizing the container runtime for '
-        'inference endpoints: ACI for lightweight, single-service workloads and AKS where '
-        'orchestration and scaling were required, packaging models as Docker microservices '
-        'published through ACR.',
         'Applied responsible AI in practice: partnered with Cyber and Enterprise Architecture '
         'to design a Microsoft Copilot Studio governance framework and a GitHub / GitHub Copilot '
         'governance framework, establishing enterprise-wide standards for AI-assisted '
@@ -202,6 +198,10 @@ def build_pdf(path='Benya_Wang_CV.pdf'):
         'Authored the standards, engineering guides, and platform patterns that made AI delivery '
         'repeatable and well documented across the business, and mentored data scientists across '
         'business units to drive consistent, production-quality outcomes.',
+        'Owned model deployment and optimisation, right-sizing the container runtime for '
+        'inference endpoints: ACI for lightweight, single-service workloads and AKS where '
+        'orchestration and scaling were required, packaging models as Docker microservices '
+        'published through ACR.',
         'Served as Acting Data Science Lead May–Jun 2026, maintaining delivery continuity '
         'across active AI workstreams; co-designed the production support model with the '
         'Operational Digital Technology team, defining ownership, escalation paths, and '
